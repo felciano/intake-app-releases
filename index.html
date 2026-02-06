@@ -804,51 +804,6 @@
             background: var(--color-card-bg);
             border: 1px solid var(--color-card-border);
             border-radius: var(--radius-sm);
-            font-size: 14px;
-            color: var(--color-text-secondary);
-            line-height: 1.5;
-        }
-
-        .issue-status {
-            flex-shrink: 0;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 2px 8px;
-            border-radius: 5px;
-            margin-top: 1px;
-        }
-
-        .status-open {
-            background: rgba(191, 135, 0, 0.1);
-            color: var(--color-amber);
-        }
-
-        .status-wip {
-            background: var(--color-accent-dim);
-            color: var(--color-accent);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .status-open {
-                background: rgba(255, 214, 10, 0.1);
-            }
-        }
-
-        /* ═══════════════════════════════════════════
-           KNOWN ISSUES
-           ═══════════════════════════════════════════ */
-        .issues-list { display: flex; flex-direction: column; gap: 10px; }
-
-        .issue-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-md);
-            padding: 14px var(--space-lg);
-            background: var(--color-card-bg);
-            border: 1px solid var(--color-card-border);
-            border-radius: var(--radius-sm);
             font-size: 15px;
             color: var(--color-text-secondary);
             line-height: 1.5;
@@ -1231,20 +1186,6 @@
         </div>
     </div>
     -->
-</section>
-
-<!-- ════════════ KNOWN ISSUES ════════════ -->
-<div class="section-divider"><hr></div>
-<section id="known-issues">
-    <p class="section-label">Beta</p>
-    <h2 class="section-title">Known issues</h2>
-    <p class="section-desc">This is a beta. Some things aren't finished yet. Here's what we know about.</p>
-    <div class="issues-list">
-        <div class="issue-item">
-            <span class="issue-status status-open">Open</span>
-            <span>Placeholder — replace with actual known issues as they come in</span>
-        </div>
-    </div>
 </section>
 
 <!-- ════════════ KNOWN ISSUES ════════════ -->
