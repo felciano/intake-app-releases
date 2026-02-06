@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intake — Universal Capture for macOS</title>
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-secondary: #f5f5f7;
+      --color-bg-card: #ffffff;
+      --color-text: #1d1d1f;
+      --color-text-secondary: #6e6e73;
+      --color-accent: #0071e3;
+      --color-accent-hover: #0077ed;
+      --color-border: #d2d2d7;
+      --color-nav-bg: rgba(255, 255, 255, 0.72);
+      --color-code-bg: #f5f5f7;
+      --color-badge-bg: #e8e8ed;
+      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-mono: "SF Mono", SFMono-Regular, ui-monospace, Menlo, monospace;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+      --max-width: 980px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #000000;
+        --color-bg-secondary: #1c1c1e;
+        --color-bg-card: #1c1c1e;
+        --color-text: #f5f5f7;
+        --color-text-secondary: #a1a1a6;
+        --color-accent: #2997ff;
+        --color-accent-hover: #6cb4ff;
+        --color-border: #38383a;
+        --color-nav-bg: rgba(0, 0, 0, 0.72);
+        --color-code-bg: #2c2c2e;
+        --color-badge-bg: #38383a;
+        --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--color-nav-bg);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 48px;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--color-text); }
+
+    /* Sections */
+    section { padding: 80px 24px; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--color-text-secondary);
+      margin-bottom: 48px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--color-badge-bg);
+      color: var(--color-text-secondary);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 980px;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--color-accent-hover); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-accent);
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-secondary:hover { background: var(--color-bg-secondary); }
+
+    .hero-screenshot {
+      margin-top: 64px;
+      padding: 24px;
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-screenshot-placeholder {
+      background: var(--color-border);
+      border-radius: var(--radius-sm);
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      font-size: 14px;
+    }
+
+    /* Features */
+    .features-section { background: var(--color-bg-secondary); }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: var(--color-text-secondary);
+      font-size: 15px;
+    }
+
+    /* Docs */
+    .docs-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+    }
+
+    .docs-block h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .steps-list {
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps-list li {
+      counter-increment: step;
+      padding: 12px 0;
+      padding-left: 40px;
+      position: relative;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .steps-list li:last-child { border-bottom: none; }
+
+    .steps-list li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps-list li strong { display: block; margin-bottom: 2px; }
+
+    .dest-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dest-list li {
+      background: var(--color-bg-secondary);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .shortcuts-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    .shortcuts-table th,
+    .shortcuts-table td {
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .shortcuts-table th {
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+    }
+
+    .shortcuts-table kbd {
+      font-family: var(--font-mono);
+      background: var(--color-code-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* Changelog */
+    .changelog-section { background: var(--color-bg-secondary); }
+
+    .changelog-entry {
+      background: var(--color-bg-card);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .changelog-entry h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .changelog-date {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .changelog-entry h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    .changelog-entry ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .changelog-entry li {
+      padding: 4px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 15px;
+      color: var(--color-text-secondary);
+    }
+
+    .changelog-entry li::before {
+      content: "\2022";
+      position: absolute;
+      left: 4px;
+      color: var(--color-accent);
+    }
+
+    /* FAQ */
+    .faq-list { max-width: 720px; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+      padding: 24px 0;
+    }
+
+    .faq-item:first-child { padding-top: 0; }
+
+    .faq-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: var(--color-text-secondary);
+      font-size: 15px;
+    }
+
+    .faq-item a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .faq-item a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      background: var(--color-bg-secondary);
+      border-top: 1px solid var(--color-border);
+      padding: 48px 24px;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 4px 0;
+    }
+
+    .footer-col a:hover { color: var(--color-accent); }
+
+    .footer-col p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+      font-size: 13px;
+      color: var(--color-text-secondary);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      section { padding: 60px 20px; }
+      .hero { padding: 80px 20px 60px; }
+      .docs-columns { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Intake</a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://github.com/felciano/intake-app-releases/releases/latest" class="btn btn-primary" style="padding:6px 16px;font-size:14px;">Download</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge" id="version-badge">Beta</span>
+      <h1>Universal Capture<br>for macOS</h1>
+      <p>One shortcut to capture anything. Route thoughts, tasks, and bookmarks to 20+ apps instantly.</p>
+      <div class="hero-actions">
+        <a href="https://github.com/felciano/intake-app-releases/releases/latest" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download for Mac
+        </a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-screenshot">
+        <div class="hero-screenshot-placeholder">
+          Screenshot coming soon
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <h2 class="section-title">Features</h2>
+      <p class="section-subtitle">Everything you need to capture and route your thoughts.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">&#x2328;&#xFE0E;</div>
+          <h3>One Shortcut</h3>
+          <p>Press <kbd>&#x2318;&#x21E7;Space</kbd> from anywhere to open the capture panel. Type, pick a destination, send. Back to what you were doing in seconds.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4E8;</div>
+          <h3>20+ Destinations</h3>
+          <p>Send captures to Obsidian, Things, Todoist, Apple Reminders, Raindrop.io, NotePlan, Drafts, Day One, Bear, files, webhooks, and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x26A1;</div>
+          <h3>Smart Routing</h3>
+          <p>Set a default destination or choose on the fly. Keyboard shortcuts let you pick destinations without touching the mouse.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F512;</div>
+          <h3>Privacy First</h3>
+          <p>Everything stays on your Mac. No account required. API keys are stored in the macOS Keychain, not in plain text.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4CB;</div>
+          <h3>Capture History</h3>
+          <p>Browse, search, and filter past captures. See what you sent, where it went, and when. Export or delete as needed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F504;</div>
+          <h3>Auto-Updates</h3>
+          <p>New versions are delivered automatically. Updates are signed and verified so you always get the genuine build.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Docs -->
+  <section id="docs">
+    <div class="container">
+      <h2 class="section-title">Getting Started</h2>
+      <p class="section-subtitle">Up and running in under a minute.</p>
+      <div class="docs-columns">
+        <div class="docs-block">
+          <h3>Setup</h3>
+          <ol class="steps-list">
+            <li><strong>Download and install</strong>Open the DMG and drag Intake to Applications.</li>
+            <li><strong>Grant Accessibility access</strong>Intake needs this for the global hotkey. macOS will prompt you on first launch.</li>
+            <li><strong>Configure destinations</strong>Open Settings from the menu bar icon and add your apps.</li>
+            <li><strong>Capture away</strong>Press <kbd>&#x2318;&#x21E7;Space</kbd> to open the panel from anywhere.</li>
+          </ol>
+        </div>
+        <div class="docs-block">
+          <h3>Supported Destinations</h3>
+          <ul class="dest-list">
+            <li>Obsidian</li>
+            <li>Things 3</li>
+            <li>Todoist</li>
+            <li>Apple Reminders</li>
+            <li>Apple Notes</li>
+            <li>Raindrop.io</li>
+            <li>NotePlan</li>
+            <li>Drafts</li>
+            <li>Day One</li>
+            <li>Ulysses</li>
+            <li>Bear</li>
+            <li>Craft</li>
+            <li>OmniFocus</li>
+            <li>TickTick</li>
+            <li>Due</li>
+            <li>Append to File</li>
+            <li>Save as File</li>
+            <li>Email</li>
+            <li>Make.com</li>
+            <li>Zapier</li>
+            <li>Custom Webhook</li>
+          </ul>
+
+          <h3 style="margin-top:32px;">Keyboard Shortcuts</h3>
+          <table class="shortcuts-table">
+            <thead>
+              <tr><th>Shortcut</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><kbd>&#x2318;&#x21E7;Space</kbd></td><td>Open capture panel</td></tr>
+              <tr><td><kbd>&#x2318;Return</kbd></td><td>Send capture</td></tr>
+              <tr><td><kbd>Escape</kbd></td><td>Dismiss panel</td></tr>
+              <tr><td><kbd>&#x2318;1</kbd> &#x2013; <kbd>&#x2318;9</kbd></td><td>Select destination</td></tr>
+              <tr><td><kbd>Tab</kbd></td><td>Move to notes field</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Changelog -->
+  <section class="changelog-section" id="changelog">
+    <div class="container">
+      <h2 class="section-title">Changelog</h2>
+      <p class="section-subtitle">What's new in each release.</p>
+      <div id="changelog-entries">
+      <!-- AUTO-GENERATED CHANGELOG ENTRIES -->
+      <div class="changelog-entry">
+        <h3>1.0.0-beta1</h3>
+        <div class="changelog-date">February 6, 2026</div>
+        <p>Initial beta release of Intake &mdash; a minimalist macOS menu bar utility for capturing thoughts and routing them anywhere.</p>
+        <h4>Capture</h4>
+        <ul>
+          <li><strong>Global hotkey</strong> &mdash; Summon the capture panel instantly from any app</li>
+          <li><strong>Smart panel</strong> &mdash; Auto-focuses the title field; resizes dynamically</li>
+          <li><strong>Offline queue</strong> &mdash; Captures auto-retry when connectivity returns</li>
+        </ul>
+        <h4>Destinations</h4>
+        <ul>
+          <li><strong>Built-in adapters</strong> &mdash; Route via URL scheme, AppleScript, file, or webhook</li>
+          <li><strong>Todoist, Raindrop.io, Pocket, Pinboard</strong> &mdash; Direct integrations</li>
+        </ul>
+        <h4>History &amp; Data</h4>
+        <ul>
+          <li><strong>Capture log</strong> &mdash; Browse, filter, export, and delete past captures</li>
+          <li><strong>iCloud sync</strong> &mdash; Settings sync across your Macs</li>
+          <li><strong>Secure storage</strong> &mdash; API keys stored in macOS Keychain</li>
+        </ul>
+      </div>
+      <!-- END CHANGELOG ENTRIES -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-subtitle">Common questions about Intake.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Why does Intake need Accessibility permission?</h3>
+          <p>The Accessibility permission is required to register a global keyboard shortcut that works from any app. Intake uses this solely for the capture hotkey &mdash; nothing else.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Where is my data stored?</h3>
+          <p>Capture history and settings are stored locally in <code>~/Library/Application Support/Intake</code>. API keys are stored in the macOS Keychain. Nothing is sent to external servers unless you configure a webhook destination.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Which macOS versions are supported?</h3>
+          <p>Intake requires macOS 13.0 (Ventura) or later. It runs natively on both Apple Silicon and Intel Macs.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I report a bug or request a feature?</h3>
+          <p>Open an issue on our <a href="https://github.com/felciano/intake-app-releases/issues">GitHub Issues</a> page. We have templates for both <a href="https://github.com/felciano/intake-app-releases/issues/new?template=bug_report.md">bug reports</a> and <a href="https://github.com/felciano/intake-app-releases/issues/new?template=feature_request.md">feature requests</a>.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is Intake open source?</h3>
+          <p>Intake is not currently open source. This repository hosts releases, documentation, and issue tracking. The source code is in a private repository.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do auto-updates work?</h3>
+          <p>Intake uses the <a href="https://sparkle-project.org/">Sparkle</a> framework to check for updates. When a new version is available, you'll see an update notification. Updates are signed with EdDSA to ensure authenticity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Download</h4>
+        <a href="https://github.com/felciano/intake-app-releases/releases/latest">Latest Release</a>
+        <a href="https://github.com/felciano/intake-app-releases/releases">All Releases</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="https://github.com/felciano/intake-app-releases/issues/new?template=bug_report.md">Report a Bug</a>
+        <a href="https://github.com/felciano/intake-app-releases/issues/new?template=feature_request.md">Request a Feature</a>
+        <a href="https://github.com/felciano/intake-app-releases/issues">All Issues</a>
+      </div>
+      <div class="footer-col">
+        <h4>Requirements</h4>
+        <p>macOS 13.0 (Ventura) or later</p>
+        <p>Apple Silicon or Intel</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Intake. Built with care for macOS.
+    </div>
+  </footer>
+
+</body>
+</html>
