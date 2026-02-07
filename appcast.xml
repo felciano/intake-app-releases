@@ -2,9 +2,27 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Intake Updates</title>
-    <link>https://github.com/felciano/intake-app-releases/releases</link>
+    <link>https://github.com/felciano/intake-app/releases</link>
     <description>Beta updates for Intake</description>
     <language>en</language>
+
+    <item>
+      <title>Version 1.0.0-beta2</title>
+      <pubDate>Sat, 07 Feb 2026 13:22:08 -0800</pubDate>
+      <sparkle:version>1.0.0.2</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta2</h2>
+        
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta2/Intake-1.0.0-beta2.dmg"
+        length="3180831"
+        type="application/octet-stream"
+        sparkle:edSignature="PLACEHOLDER_SIGNATURE"
+      />
+    </item>
 
     <item>
       <title>Version 1.0.0-beta1</title>
@@ -34,7 +52,7 @@
         </ul>
       ]]></description>
       <enclosure
-        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta1/Intake-1.0.0-beta1.dmg"
+        url="https://github.com/felciano/intake-app/releases/download/v1.0.0-beta1/Intake-1.0.0-beta1.dmg"
         sparkle:edSignature="dTW/mQNrtpn5kPRW2lYGFQnVPdCA3ShJkB1FCxZ6cWrKP4wpHrA7WkHjG35a/qCPzhtBYPUl8xU+0hEaR9mVAw=="
         length="3167585"
         type="application/octet-stream"
