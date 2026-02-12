@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta3</title>
+      <pubDate>Thu, 12 Feb 2026 19:54:16 +0000</pubDate>
+      <sparkle:version>1.0.0.3</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta3</h2>
+        
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta3/Intake-1.0.0-beta3.dmg"
+        length="3183194"
+        type="application/octet-stream"
+        sparkle:edSignature="6siaHfAZowvXh3/EX1vnq6c5lQZ8Z//C1PIbRTNsLBghdvV6gJq/45vxY1QzC41Pg7Nk5Q4gYT4aWtppr2MxBw=="
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta2</title>
       <pubDate>Sat, 07 Feb 2026 13:22:08 -0800</pubDate>
       <sparkle:version>1.0.0.2</sparkle:version>
