@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta8</title>
+      <pubDate>Sun, 15 Feb 2026 22:37:18 +0000</pubDate>
+      <sparkle:version>1.0.0.8</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta8</h2>
+        <h3>Bug Fixes</h3><ul><li><strong>release:</strong> fix macOS sed compatibility in appcast changelog conversion</li></ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta8/Intake-1.0.0-beta8.dmg"
+        length="3203937"
+        type="application/octet-stream"
+        sparkle:edSignature="RdL+S5XnkbtuRshhoBaWcsLTM2JJPuIfC9xnaqZBq0eWvULWGhuesNdI8d0I68LZh+ItuwQyS/60dE9DOCcwAw=="
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta7</title>
       <pubDate>Sun, 15 Feb 2026 20:11:22 +0000</pubDate>
       <sparkle:version>1.0.0.7</sparkle:version>
