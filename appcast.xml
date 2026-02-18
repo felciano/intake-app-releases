@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta9</title>
+      <pubDate>Wed, 18 Feb 2026 21:08:50 +0000</pubDate>
+      <sparkle:version>1.0.0.9</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta9</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta9</h2>
+        <h3>New Features</h3><ul><li><strong>Destination-aware location picker</strong> — The capture panel now shows location options specific to each destination instead of a hardcoded dropdown.</li></ul><h3>Bug Fixes</h3><ul><li><strong>Fixed Keychain credential storage</strong> — API keys (Todoist, Raindrop, etc.) were not being saved because the Keychain entitlements file was not wired to the Xcode build settings. Credentials now persist correctly across launches.</li></ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta9/Intake-1.0.0-beta9.dmg"
+        length="3222684"
+        type="application/octet-stream"
+        sparkle:edSignature="ETJD7dbBztbvp23UMm2PSiusFChiA3TkdyG/opzitayplvTeJJ3PrVrQyoYmp3KDxVaCwFRD0g9sbv2u9447BQ=="
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta8</title>
       <pubDate>Sun, 15 Feb 2026 22:37:18 +0000</pubDate>
       <sparkle:version>1.0.0.8</sparkle:version>
