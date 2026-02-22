@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta10</title>
+      <pubDate>Sun, 22 Feb 2026 01:03:43 +0000</pubDate>
+      <sparkle:version>1.0.0.10</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta10</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta10</h2>
+        <h3>Bug Fixes</h3><ul><li><strong>keychain:</strong> fix access group mismatch breaking credential reads</li><li><strong>release:</strong> fix notarization, Sparkle signing, and export in release script</li></ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta10/Intake-1.0.0-beta10.dmg"
+        length="3226588"
+        type="application/octet-stream"
+        sparkle:edSignature="PLACEHOLDER_SIGNATURE"
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta9</title>
       <pubDate>Wed, 18 Feb 2026 21:08:50 +0000</pubDate>
       <sparkle:version>1.0.0.9</sparkle:version>
