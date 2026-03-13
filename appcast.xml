@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta12</title>
+      <pubDate>Fri, 13 Mar 2026 20:50:52 +0000</pubDate>
+      <sparkle:version>1.0.0.12</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta12</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta12</h2>
+        <h3>New Destinations</h3><ul><li><strong>SideNotes</strong> — Full support with folder selection, note picker, and section-aware insertion</li><li><strong>FiveNotes</strong> — All 5 notes supported with section-aware insertion</li><li><strong>Raycast Notes</strong> — Direct file-based integration (currently hidden pending API clarification)</li></ul><h3>Destination Improvements</h3><ul><li><strong>Tot</strong> — Section-aware insertion now supported; content goes exactly where you want it</li><li><strong>Drafts</strong> — Section heading support and UUID-based append/prepend to existing drafts</li><li><strong>All destinations</strong> — Custom prefix/suffix formatting options for captured content</li></ul><h3>Settings UI</h3><ul><li>Hierarchical note picker for SideNotes with folder grouping</li><li>Improved formatting options with live item preview</li><li>Configuration options now show for all capture modes (Create New, Append, Prepend)</li><li>Mode-aware labels and descriptions throughout</li></ul><h3>Bug Fixes</h3><ul><li>Fixed blank line spacing consistency in section insertion across all adapters</li><li>Fixed style prefix and trailing newline handling for append modes</li><li>Fixed Test button routing for SideNotes</li></ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta12/Intake-1.0.0-beta12.dmg"
+        length="3445342"
+        type="application/octet-stream"
+        sparkle:edSignature="6JE9/JkMjBf7cKJZlmQa357rs8eQK9BdDKwLpIhh05mr1lrAk07LxaHD6hIXsA4jRYQzt1FDLrEWJSlNqTUqBw=="
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta11</title>
       <pubDate>Thu, 26 Feb 2026 21:09:14 +0000</pubDate>
       <sparkle:version>1.0.0.11</sparkle:version>
