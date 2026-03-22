@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta13</title>
+      <pubDate>Sun, 22 Mar 2026 14:03:48 +0000</pubDate>
+      <sparkle:version>1.0.0.13</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta13</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta13</h2>
+        <h3>New Features</h3><ul><li><strong>capture:</strong> add inline token parsing for dates, priorities, and tags</li><li><strong>models:</strong> add supportsScheduledDate and supportsTags capability flags</li><li><strong>capture:</strong> add Return Key to Send setting</li></ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta13/Intake-1.0.0-beta13.dmg"
+        length="3547935"
+        type="application/octet-stream"
+        sparkle:edSignature="4hmZCeVctRZ2bEaI5328RDM1GZTPG8VS6s0zj1x9sG55xYTQbq4KhVtnZdMYUloFGo8JG+EYTejLvOOei8XCBA=="
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta12</title>
       <pubDate>Fri, 13 Mar 2026 20:50:52 +0000</pubDate>
       <sparkle:version>1.0.0.12</sparkle:version>
