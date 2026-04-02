@@ -7,6 +7,24 @@
     <language>en</language>
 
     <item>
+      <title>Version 1.0.0-beta14</title>
+      <pubDate>Thu, 02 Apr 2026 20:22:13 +0100</pubDate>
+      <sparkle:version>1.0.0.14</sparkle:version>
+      <sparkle:shortVersionString>1.0.0-beta14</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+        <h2>What's New in 1.0.0-beta14</h2>
+        <h3>New Features</h3><ul><li><strong>capture:</strong> add Tab key navigation from title to notes field</li><li><strong>release:</strong> add Fastlane-based release wrapper script</li><li><strong>release:</strong> add parallel Fastlane release pipeline</li></ul><h3>Bug Fixes</h3><ul><li><strong>release:</strong> use manual signing in export plist, not archive</li><li><strong>release:</strong> use Developer ID signing for archive and show export errors</li><li><strong>release:</strong> auto-rollback version bumps on failure</li><li><strong>drafts:</strong> add tag parameter to Drafts create URL template</li><li><strong>fastlane:</strong> fix signing, notarization, and path resolution</li><li><strong>menu:</strong> set explicit target on Check for Updates menu item</li></ul>
+      ]]></description>
+      <enclosure
+        url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta14/Intake-1.0.0-beta14.dmg"
+        length="3565651"
+        type="application/octet-stream"
+        sparkle:edSignature="ux/ZaXQEDxV+Z1MFJoNZyPNCA7cpQG0nSfz0kzGZq2PHaWhy5VcoLn09tdyXnUNo3tfyRI0UfwyeDox8uKZfCw=="
+      />
+    </item>
+
+    <item>
       <title>Version 1.0.0-beta13</title>
       <pubDate>Sun, 22 Mar 2026 14:03:48 +0000</pubDate>
       <sparkle:version>1.0.0.13</sparkle:version>
