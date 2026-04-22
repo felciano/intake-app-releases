@@ -7,6 +7,25 @@
     <language>en</language>
 
 <item>
+  <title>Version 1.0.0-beta17</title>
+  <pubDate>Wed, 22 Apr 2026 23:27:57 +0100</pubDate>
+  <sparkle:version>1.0.0.17</sparkle:version>
+  <sparkle:shortVersionString>1.0.0-beta17</sparkle:shortVersionString>
+  <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+  <description><![CDATA[
+    <h2>What's New in 1.0.0-beta17</h2>
+    <h3>New Features</h3><ul><li><strong>capture</strong>: backspace inside committed project token re-enters autocomplete</li><li><strong>capture</strong>: inline project autocomplete while typing</li></ul><h3>Bug Fixes</h3><ul><li><strong>capture</strong>: fix inline project autocomplete dropdown clipping and project fetch</li><li><strong>capture</strong>: restore focus to previous app on dismiss</li></ul>
+  ]]></description>
+  <enclosure
+    url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta17/Intake-1.0.0-beta17.dmg"
+    length="3681360"
+    type="application/octet-stream"
+    sparkle:edSignature="JyyDJWmi4siDBfTqrx42AguQ+Y4ILyF+0buf1OgSHmQw4tj3fIpcBrpII8cZnxyMn+cCvWJkNNrndt7JtNqyAA=="
+  />
+</item>
+
+
+<item>
   <title>Version 1.0.0-beta16</title>
   <pubDate>Mon, 20 Apr 2026 22:39:26 +0100</pubDate>
   <sparkle:version>1.0.0.16</sparkle:version>
