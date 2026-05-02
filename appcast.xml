@@ -7,6 +7,25 @@
     <language>en</language>
 
 <item>
+  <title>Version 1.0.0-beta18</title>
+  <pubDate>Sat, 02 May 2026 18:09:14 +0100</pubDate>
+  <sparkle:version>1.0.0.18</sparkle:version>
+  <sparkle:shortVersionString>1.0.0-beta18</sparkle:shortVersionString>
+  <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+  <description><![CDATA[
+    <h2>What's New in 1.0.0-beta18</h2>
+    <h3>New Features</h3><ul><li><strong>todoist</strong>: reflect project hierarchy in both pickers</li></ul>
+  ]]></description>
+  <enclosure
+    url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta18/Intake-1.0.0-beta18.dmg"
+    length="3689400"
+    type="application/octet-stream"
+    sparkle:edSignature="y/hUxAD3Hvy8b0PwoyxJ5wHLz8vLwI4X2bUciR62BB0emhtWpVJdOsuq0DuBHM+MDE8BPUDlWTUUCkIdM6fZCg=="
+  />
+</item>
+
+
+<item>
   <title>Version 1.0.0-beta17</title>
   <pubDate>Wed, 22 Apr 2026 23:27:57 +0100</pubDate>
   <sparkle:version>1.0.0.17</sparkle:version>
