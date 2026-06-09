@@ -7,6 +7,25 @@
     <language>en</language>
 
 <item>
+  <title>Version 1.0.0-beta19</title>
+  <pubDate>Tue, 09 Jun 2026 13:37:03 +0100</pubDate>
+  <sparkle:version>1.0.0.19</sparkle:version>
+  <sparkle:shortVersionString>1.0.0-beta19</sparkle:shortVersionString>
+  <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+  <description><![CDATA[
+    <h2>What's New in 1.0.0-beta19</h2>
+    <h3>New Features</h3><ul><li><strong>settings</strong>: add GitHub Issues destination configuration UI</li><li><strong>destinations</strong>: add GitHub Issues to the destination catalog</li><li><strong>adapters</strong>: wire GitHub issue send and register adapter in router</li><li><strong>adapters</strong>: add GitHubAPIClient with mocked-session tests</li><li><strong>adapters</strong>: add GitHub issue request mapping (pure)</li><li><strong>models</strong>: add GitHub Issues config fields to RouteConfig</li><li><strong>services</strong>: add pure TemplateRenderer for destination templates</li><li><strong>adapters</strong>: add SendOutcome return path for external issue URLs</li></ul><h3>Bug Fixes</h3><ul><li><strong>settings</strong>: surface Bookmarks category in Add Destination sheet</li><li><strong>adapters</strong>: reject malformed webhook URLs (whitespace, missing scheme/host)</li><li><strong>settings</strong>: surface Development category in Add Destination sheet</li><li><strong>adapters</strong>: surface auth errors from fetchIssueTypes; tighten client error tests</li></ul><h3>Performance</h3><ul><li><strong>settings</strong>: precompute GitHub reuse candidates; harden owner/repo parser and reset-on-edit</li></ul>
+  ]]></description>
+  <enclosure
+    url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta19/Intake-1.0.0-beta19.dmg"
+    length="3808012"
+    type="application/octet-stream"
+    sparkle:edSignature="9Jz3GZqDAeA91alnRffyXXA6JC+QbDklX5R7k5V4WKBed51KeZ4VK3hKnDy/Zi41aYsIPZDZkxWfUTkBGjTbBw=="
+  />
+</item>
+
+
+<item>
   <title>Version 1.0.0-beta18</title>
   <pubDate>Sat, 02 May 2026 18:09:14 +0100</pubDate>
   <sparkle:version>1.0.0.18</sparkle:version>
