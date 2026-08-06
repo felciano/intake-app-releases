@@ -7,6 +7,25 @@
     <language>en</language>
 
 <item>
+  <title>Version 1.0.0-beta21</title>
+  <pubDate>Thu, 06 Aug 2026 20:52:37 +0100</pubDate>
+  <sparkle:version>1.0.0.21</sparkle:version>
+  <sparkle:shortVersionString>1.0.0-beta21</sparkle:shortVersionString>
+  <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+  <description><![CDATA[
+    <h2>What's New in 1.0.0-beta21</h2>
+    <h3>Breaking Changes</h3><ul><li><strong>destinations</strong>: Obsidian destination no longer targets daily notes</li></ul><h3>New Features</h3><ul><li><strong>settings</strong>: add Obsidian REST connection test and docs</li><li><strong>adapters</strong>: write via Obsidian REST API with file fallback</li><li><strong>adapters</strong>: add Obsidian Local REST API client</li><li><strong>settings</strong>: add Obsidian Daily Note configuration UI</li><li><strong>services</strong>: list daily note sections for obsidian-daily</li><li><strong>destinations</strong>: register Obsidian Daily Note destination</li><li><strong>adapters</strong>: add Obsidian daily note file write adapter</li><li><strong>services</strong>: resolve Obsidian vault paths and daily note config</li><li><strong>services</strong>: convert moment.js date formats to DateFormatter</li><li><strong>models</strong>: add Obsidian daily note route config fields</li><li><strong>models</strong>: add retriable targetNotFound error code</li></ul><h3>Bug Fixes</h3><ul><li><strong>destinations</strong>: Obsidian destination no longer targets daily notes</li><li><strong>adapters</strong>: drop legacy Obsidian daily-note append path</li><li><strong>scripts</strong>: strip quotes when reading MARKETING_VERSION</li><li><strong>obsidian-daily</strong>: close test race and wire REST test path</li><li><strong>adapters</strong>: invalidate pinned REST sessions, warn when unverified</li><li><strong>adapters</strong>: reject path traversal in Obsidian REST client</li><li><strong>recovery</strong>: exempt user-resolvable failures from retry cap</li><li><strong>services</strong>: mark Obsidian vault locator types nonisolated</li><li><strong>adapters</strong>: tighten Obsidian daily-note adapter test rigor</li></ul>
+  ]]></description>
+  <enclosure
+    url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta21/Intake-1.0.0-beta21.dmg"
+    length="3890944"
+    type="application/octet-stream"
+    sparkle:edSignature="WbOxPNx7obyegqUzwwlpIVlErS6xcM9XyPZdVaAeAeNdFQL9c4igBteFYJi3/tu2obBAPCrJ15moos35If7HAQ=="
+  />
+</item>
+
+
+<item>
   <title>Version 1.0.0-beta20</title>
   <pubDate>Mon, 27 Jul 2026 10:27:57 +0100</pubDate>
   <sparkle:version>1.0.0.20</sparkle:version>
