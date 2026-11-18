@@ -7,6 +7,25 @@
     <language>en</language>
 
 <item>
+  <title>Version 1.0.0-beta24</title>
+  <pubDate>Wed, 18 Nov 2026 01:29:57 +0000</pubDate>
+  <sparkle:version>1.0.0.24</sparkle:version>
+  <sparkle:shortVersionString>1.0.0-beta24</sparkle:shortVersionString>
+  <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+  <description><![CDATA[
+    <h2>What's New in 1.0.0-beta24</h2>
+    <h3>Bug Fixes</h3><ul><li><strong>beta</strong>: update an expired beta in place through Sparkle</li><li><strong>capture</strong>: make the notes field a real multi-line editor</li></ul>
+  ]]></description>
+  <enclosure
+    url="https://github.com/felciano/intake-app-releases/releases/download/v1.0.0-beta24/Intake-1.0.0-beta24.dmg"
+    length="3857823"
+    type="application/octet-stream"
+    sparkle:edSignature="07w+0J/sN7yHF/LElJA8AThysdIw16nCiUIvpoI5LS9UJzLWRBVPSVSswgPgskKV1HylQdZNK7DUrpHbKnq+CA=="
+  />
+</item>
+
+
+<item>
   <title>Version 1.0.0-beta23</title>
   <pubDate>Wed, 16 Sep 2026 23:51:00 +0100</pubDate>
   <sparkle:version>1.0.0.23</sparkle:version>
